@@ -1,0 +1,74 @@
+//
+//  PrefixHeader.pch
+//  MentalDisease
+//
+//  Created by 黄佳峰 on 16/5/26.
+//  Copyright © 2016年 黄蜂大魔王. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#import "GlobalInfo.h"         //保存地址
+//#import "HttpManager.h"        //封装的网络请求
+#import "UserSession.h"         //登录信息
+
+#import "UIColor+Art.h"         //16进制  字体 颜色
+#import "UIView+Frame.h"        //.x   setX
+
+//库
+#import "JRToast.h"
+#import "MJRefresh.h"
+#import "AFNetworking.h"
+#import "MBProgressHUD.h"
+#import "Masonry.h"
+#import "SDWebImageManager.h"
+#import "HttpManager.h"
+
+#import "UIImageView+WebCache.h"
+#import "AMTumblrHud.h"   // 加载的三个球
+#import "XXNavigationController.h"
+
+#import "UMSocial.h"
+
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//获取屏幕宽度
+#define KScreenWidth  [UIScreen mainScreen].bounds.size.width
+//获取屏幕高度
+#define KScreenHeight [UIScreen mainScreen].bounds.size.height
+//获取导航栏高度
+#define NavigationBarHeight self.navigationController.navigationBar.frame.size.height
+//获取状态栏高度
+#define StatusBarHeight  [[UIApplication sharedApplication] statusBarFrame].size.height
+//获取tabBar的高度
+#define tabbarDeHeight 49
+
+//  设置颜色
+#define RGBCOLOR(a,b,c,d)    [UIColor colorWithRed:a/255.0 green:b/255.0 blue:c/255.0 alpha:d]
+#define kBaseNaviColor @"#ee6265"
+#define BaseColor     RGBCOLOR(21, 156, 88, 1)
+
+
+//  自动登录
+#define AUTOLOGINACCOUNT    @"autoLoginAccount"
+#define AUTOLOGINCODE       @"autoLoginCode"
+
+
+//常用变量
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define kTipAlert(_S_, ...)     [[[UIAlertView alloc] initWithTitle:@"提示" message:[NSString stringWithFormat:(_S_), ##__VA_ARGS__] delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil] show]
+
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+
+#define SCREEN_MAX_LENGTH (MAX(KScreenWidth, KScreenHeight))
+#define SCREEN_MIN_LENGTH (MIN(KScreenWidth, KScreenHeight))
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_IPHONE_5s_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 667.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+
+#endif /* PrefixHeader_pch */

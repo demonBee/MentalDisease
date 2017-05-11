@@ -1,0 +1,8 @@
+
+
+target:”MentalDisease” do
+platform :ios,'7.1'
+
+pod 'JSONModel'
+#pod 'UMengSocialCOM', '~> 5.2.1'
+end
